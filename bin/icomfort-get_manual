@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cookieSessionId=$ICOMFORT_COOKIE_SESSION_ID
+cookieUser=$ICOMFORT_COOKIE_USER
+gatewaySerial=$ICOMFORT_GATEWAY_SERIAL
+userId=$ICOMFORT_USER_ID
+
+url="https://www.myicomfort.com/Dashboard.aspx/NewGetManualInfo"
+headerContentType="Content-Type: application/json; charset=UTF-8"
+headerCookies="Cookie: iComfort=ic2; ASP.NET_SessionId=${cookieSessionId}; RegisteredUserCookie=${cookieUser}"
+
+payloadJson="{\"hidden_gateway_SN\":\"${gatewaySerial}\",\"pref_temp_units\":\"0\",\"userid\":\"${userId}\",\"Central_Zoned_Away\":\"2\",\"Cancel_Away\":\"-1\",\"current_prg\":\"2\",\"current_mode\":\"1\",\"CurrentBrowser\":\"nodejs\",\"zoneNumber\":\"0\",\"Current_Thermostat\":\"0\",\"alertViewTypes\":\"0\",\"alertTypes\":\"1\",\"reminderTypes\":\"0\"}"
+
+curl $url -H "$headerContentType" -H "$headerCookies" --data-binary $payloadJson --compressed
+
+echo $'\n'
