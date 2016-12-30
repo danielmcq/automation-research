@@ -1,0 +1,19 @@
+{
+  "name": "automation-research",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmcq/automation-research.git"
+  },
+  "author": "Daniel McQuiston <daniel.pro@dehugo.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielmcq/automation-research/issues"
+  },
+  "homepage": "https://github.com/danielmcq/automation-research#readme"
+}
